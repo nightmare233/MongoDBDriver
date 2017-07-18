@@ -1,0 +1,15 @@
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\bin\Debug\MongoDB.Driver.XML
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\bin\Debug\MongoDB.Driver.dll
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\bin\Debug\MongoDB.Driver.pdb
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\bin\Debug\MongoDB.Driver.dll.CodeAnalysisLog.xml
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\bin\Debug\MongoDB.Driver.dll.lastcodeanalysissucceeded
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\bin\Debug\MongoDB.Bson.dll
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\bin\Debug\MongoDB.Driver.Core.dll
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\bin\Debug\MongoDB.Bson.pdb
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\bin\Debug\MongoDB.Bson.xml
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\bin\Debug\MongoDB.Driver.Core.pdb
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\bin\Debug\MongoDB.Driver.Core.xml
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\obj\Debug\MongoDB.Driver.csprojResolveAssemblyReference.cache
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\obj\Debug\MongoDB.Driver.dll
+F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Driver\obj\Debug\MongoDB.Driver.pdb
