@@ -37,8 +37,7 @@ namespace FrankTestMongoDB
                 return null;
             }
             var _id = ObjectId.GenerateNewId();
-            //BsonDocument bdoc = new BsonDocument() { { "id", "002" }, { "doc", byteImg } };
-            BsonDocument bdoc = new BsonDocument() { { "_id", _id }, { "ticketid", "264" }, { "module", "ticket" }, { "docs", attachment } };
+            BsonDocument bdoc = new BsonDocument() { { "_id", _id }, { "docs", attachment } };
 
             helper.collection.InsertOne(bdoc);
             return _id.ToString();
@@ -97,13 +96,13 @@ namespace FrankTestMongoDB
         {
             ObjectId _id;
 
-            if (ObjectId.TryParse(objId, out _id))
+            if (ObjectId.TryParse(objId, out _id))   //ID要转换为OBjectId类型！
             {
                 var filter = Builders<BsonDocument>.Filter.Eq("_id", _id);
 
                 var result = helper.collection.Find(filter).FirstOrDefault();
 
-                return result.ToBson();
+                return (byte[]) result["docs"] ;  //强制转换成byte[]
             }
             else
             {
@@ -118,7 +117,16 @@ namespace FrankTestMongoDB
         /// <returns>是否成功？</returns>
         public override bool DeleteAttachmentByObjId(string objId)
         {
+            ObjectId _id;
+            if (ObjectId.TryParse(objId, out _id))   //ID要转换为OBjectId类型！
+            {
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", _id);
+                DeleteResult result = helper.collection.DeleteOne(filter);
+                return result.DeletedCount > 0 ? true : false;
+            }
             return false;
+
+                
         }
 
 

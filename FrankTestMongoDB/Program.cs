@@ -16,29 +16,27 @@ namespace FrankTestMongoDB
         static MongoDBHelp de = new MongoDBHelp();
         static void Main(string[] args)
         {
+            //BB();
+            //AA();
+            DeleteTest();
+        }
+
+        private static void AA()
+        {
             try
             {
-                AbstractAttachmentAccess aa, bb;
-                aa = new AttachmentAccess();
+                AbstractAttachmentAccess aa = new AttachmentAccess();
 
-                //string filepath = @"D:\Documents\kb sql\111.txt";
+                string filepath = @"D:\Documents\kb sql\111.txt";
 
-                //byte[] byteImg = File.ReadAllBytes(filepath);
-                //string id = aa.InsertAttachment(byteImg);
-                string id = "597047d03f47be3ed0548dac";
+                byte[] byteImg = File.ReadAllBytes(filepath);
+                string id = aa.InsertAttachment(byteImg);
 
                 var doc = aa.GetAttachmentBytesByObjId(id);
 
-                //bb = new AttachmentGFSAccess();
-                //string id = bb.InsertAttachment(byteImg);
-
-                //var doc = bb.GetAttachmentBytesByObjId(id);
-
-
-
                 Console.Out.WriteLine(id);
                 Console.Out.WriteLine(doc);
-                 Console.ReadKey();
+                Console.ReadKey();
             }
             catch (Exception)
             {
@@ -46,115 +44,53 @@ namespace FrankTestMongoDB
             }
         }
 
-        public static void Example_1()
-        {
-            // db.inventory.insertOne( { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } } ) 
-
-            // Start Example 1
-            //MongoDBHelp de = new MongoDBHelp();
-            //var document = new BsonDocument
-            //{
-            //    { "item", "canvas" },
-            //    { "qty", 100 },
-            //    { "tags", new BsonArray { "cotton" } },
-            //    { "size", new BsonDocument { { "h", 28 }, { "w", 35.5 }, { "uom", "cm" } } }
-            //};
-            //de.collection.InsertOne(document);
-            // End Example 1
-            //List<BsonDocument> lists = new List<BsonDocument>();
-            for (int i = 0; i <= 100; i++)
-            {
-                var document = new BsonDocument {
-                        { "item", "canvas"+ i },
-                        { "qty", 100+i },
-                        { "tags", new BsonArray { "cotton" } },
-                        { "size", new BsonDocument { { "h", 28 }, { "w", 35.5 }, { "uom", "cm"+i } } } };
-                de.collection.InsertOneAsync(document);
-            }
-
-            var result = de.collection.Find("{}").ToJson();
-
-            //de.RemoveIds(result); 
-        }
-
-        public static void Example_2()
-        {
-            // db.inventory.find( { item: "canvas" } )
-
-            // Start Example 2
-            //MongoDBHelp de = new MongoDBHelp();
-            //var filter = Builders<BsonDocument>.Filter.Eq("item", "canvas1");
-            var filter = Builders<BsonDocument>.Filter.Gt("qty", 190);
-            var result = de.collection.Find(filter).ToList();
-            // End Example 2
-            Console.Out.Write(result.ToJson());
-            Console.ReadKey();
-            //de.Render(filter).Should().Be("{ item: \"canvas\" }");
-        }
-
-        public static void Example_3()
-        {
-            var documents = new BsonDocument[]
-       {
-                new BsonDocument
-                {
-                    { "item", "journal" },
-                    { "qty", 25 },
-                    { "tags", new BsonArray { "blank", "red" } },
-                    { "size", new BsonDocument { { "h", 14 }, { "w", 21 }, {  "uom", "cm"} } }
-                },
-                new BsonDocument
-                {
-                    { "item", "mat" },
-                    { "qty", 85 },
-                    { "tags", new BsonArray { "gray" } },
-                    { "size", new BsonDocument { { "h", 27.9 }, { "w", 35.5 }, {  "uom", "cm"} } }
-                },
-                new BsonDocument
-                {
-                    { "item", "mousepad" },
-                    { "qty", 25 },
-                    { "tags", new BsonArray { "gel", "blue" } },
-                    { "size", new BsonDocument { { "h", 19 }, { "w", 22.85 }, {  "uom", "cm"} } }
-                },
-       };
-            de.collection.InsertMany(documents);
-            var filter = Builders<BsonDocument>.Filter.Eq("item", "mousepad");
-            var result = de.collection.Find(filter).ToList();
-            Console.Out.Write(result.ToJson());
-            Console.ReadKey();
-        }
-
-        public static string TestUploadFiles()
+        private static void BB()
         {
             try
             {
-                string filepath = @"D:\Documents\kb sql\dbo.t_KB_Article.sql";
+                AbstractAttachmentAccess bb = new AttachmentGFSAccess();
+
+
+                string filepath = @"D:\Documents\kb sql\111.txt";
 
                 byte[] byteImg = File.ReadAllBytes(filepath);
-                string _id = Guid.NewGuid().ToString();
-                //BsonDocument bdoc = new BsonDocument() { { "id", "002" }, { "doc", byteImg } };
-                BsonDocument bdoc = new BsonDocument() { { "_id", _id }, { "name", "frank" }, { "age", "12" }, { "doc", byteImg } };
-                //de.collection.InsertOneAsync(bdoc);
-                de.collection.InsertOne(bdoc);
-                return _id;
+
+                //string id = "597047d03f47be3ed0548dac";
+
+                string id = bb.InsertAttachment(byteImg);
+
+                var doc = bb.GetAttachmentBytesByObjId(id);   //实验证明，返回的byte[]和传入的参数是一致的。
+
+
+                Console.Out.WriteLine(id);
+                Console.Out.WriteLine(doc);
+                Console.ReadKey();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                throw;
             }
         }
 
-        public static void WritetoFieles()
+        private static void DeleteTest()
         {
-
+            try
+            {
+                string id = "59706b0d3f47be236cc9e42a";
+                AbstractAttachmentAccess aaa = new AttachmentAccess();
+                aaa.DeleteAttachmentByObjId(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        public static string GetFileFromMongo(string id)
+        private static void DeleteGfsTest()
         {
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
-            var result = de.collection.Find(filter).ToList().ToJson();
-            return result;
+            string id = "59706b0d3f47be236cc9e42a";
+            AbstractAttachmentAccess aaa = new AttachmentAccess();
+            aaa.DeleteAttachmentByObjId(id);
         }
     }
 }

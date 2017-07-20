@@ -19,9 +19,24 @@ namespace FrankTestMongoDB
         {
             helper = new MongoDBHelp();
         }
+
         public override bool DeleteAttachmentByObjId(string objId)
         {
-            throw new NotImplementedException();
+            ObjectId _id;
+            try
+            {
+                if (ObjectId.TryParse(objId, out _id))
+                {
+                    var bucket = new MongoDB.Driver.GridFS.GridFSBucket(helper.database);
+                    bucket.Delete(_id);
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public override string GetAttachmentByObjId(string objId)
@@ -42,7 +57,7 @@ namespace FrankTestMongoDB
         public override byte[] GetAttachmentBytesByObjId(string objId)
         {
             var bucket = new MongoDB.Driver.GridFS.GridFSBucket(helper.database);
-          
+
             ObjectId objId1 = new ObjectId(objId);
 
             byte[] resut = bucket.DownloadAsBytes(objId1);  //这里的参数要ObjectId类型不能是string。
@@ -64,7 +79,7 @@ namespace FrankTestMongoDB
             return result;
         }
 
-        public override string InsertAttachment( byte[] attachment)
+        public override string InsertAttachment(byte[] attachment)
         {
             string filename = "ticket1";
             var bucket = new MongoDB.Driver.GridFS.GridFSBucket(helper.database);
