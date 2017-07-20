@@ -5,3 +5,10 @@ F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Bson\bin\Debug\MongoDB.Bson.dl
 F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Bson\bin\Debug\MongoDB.Bson.dll.lastcodeanalysissucceeded
 F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Bson\obj\Debug\MongoDB.Bson.dll
 F:\MongoDB Driver\mongo-csharp-driver\src\MongoDB.Bson\obj\Debug\MongoDB.Bson.pdb
+F:\MongoDB Driver\src\MongoDB.Bson\bin\Debug\MongoDB.Bson.XML
+F:\MongoDB Driver\src\MongoDB.Bson\bin\Debug\MongoDB.Bson.dll
+F:\MongoDB Driver\src\MongoDB.Bson\bin\Debug\MongoDB.Bson.pdb
+F:\MongoDB Driver\src\MongoDB.Bson\bin\Debug\MongoDB.Bson.dll.CodeAnalysisLog.xml
+F:\MongoDB Driver\src\MongoDB.Bson\bin\Debug\MongoDB.Bson.dll.lastcodeanalysissucceeded
+F:\MongoDB Driver\src\MongoDB.Bson\obj\Debug\MongoDB.Bson.dll
+F:\MongoDB Driver\src\MongoDB.Bson\obj\Debug\MongoDB.Bson.pdb

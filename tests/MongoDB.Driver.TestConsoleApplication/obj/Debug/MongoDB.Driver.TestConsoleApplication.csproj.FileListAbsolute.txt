@@ -1,0 +1,1 @@
+F:\MongoDB Driver\tests\MongoDB.Driver.TestConsoleApplication\obj\Debug\MongoDB.Driver.TestConsoleApplication.csprojResolveAssemblyReference.cache

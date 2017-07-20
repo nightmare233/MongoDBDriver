@@ -13,15 +13,37 @@ namespace FrankTestMongoDB
 {
     class Program
     {
-        static DocumentExamples de = new DocumentExamples();
+        static MongoDBHelp de = new MongoDBHelp();
         static void Main(string[] args)
         {
-            //Example_1();
-            //Example_2();
-            //Example_3();
-            //TestUploadFiles();
-            //TestGetFiles();
-            WritetoFieles();
+            try
+            {
+                AbstractAttachmentAccess aa, bb;
+                aa = new AttachmentAccess();
+
+                //string filepath = @"D:\Documents\kb sql\111.txt";
+
+                //byte[] byteImg = File.ReadAllBytes(filepath);
+                //string id = aa.InsertAttachment(byteImg);
+                string id = "597047d03f47be3ed0548dac";
+
+                var doc = aa.GetAttachmentBytesByObjId(id);
+
+                //bb = new AttachmentGFSAccess();
+                //string id = bb.InsertAttachment(byteImg);
+
+                //var doc = bb.GetAttachmentBytesByObjId(id);
+
+
+
+                Console.Out.WriteLine(id);
+                Console.Out.WriteLine(doc);
+                 Console.ReadKey();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public static void Example_1()
@@ -29,7 +51,7 @@ namespace FrankTestMongoDB
             // db.inventory.insertOne( { item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } } ) 
 
             // Start Example 1
-            //DocumentExamples de = new DocumentExamples();
+            //MongoDBHelp de = new MongoDBHelp();
             //var document = new BsonDocument
             //{
             //    { "item", "canvas" },
@@ -51,8 +73,7 @@ namespace FrankTestMongoDB
             }
 
             var result = de.collection.Find("{}").ToJson();
-            Console.Out.Write(result);
-            Console.ReadKey();
+
             //de.RemoveIds(result); 
         }
 
@@ -61,7 +82,7 @@ namespace FrankTestMongoDB
             // db.inventory.find( { item: "canvas" } )
 
             // Start Example 2
-            //DocumentExamples de = new DocumentExamples();
+            //MongoDBHelp de = new MongoDBHelp();
             //var filter = Builders<BsonDocument>.Filter.Eq("item", "canvas1");
             var filter = Builders<BsonDocument>.Filter.Gt("qty", 190);
             var result = de.collection.Find(filter).ToList();
@@ -104,54 +125,34 @@ namespace FrankTestMongoDB
             Console.ReadKey();
         }
 
-        public static void TestUploadFiles()
+        public static string TestUploadFiles()
         {
             try
             {
                 string filepath = @"D:\Documents\kb sql\dbo.t_KB_Article.sql";
 
                 byte[] byteImg = File.ReadAllBytes(filepath);
-
-                BsonDocument bdoc = new BsonDocument() { { "id", "002" }, { "doc", byteImg } };
-
+                string _id = Guid.NewGuid().ToString();
+                //BsonDocument bdoc = new BsonDocument() { { "id", "002" }, { "doc", byteImg } };
+                BsonDocument bdoc = new BsonDocument() { { "_id", _id }, { "name", "frank" }, { "age", "12" }, { "doc", byteImg } };
                 //de.collection.InsertOneAsync(bdoc);
                 de.collection.InsertOne(bdoc);
+                return _id;
             }
             catch (Exception e)
             {
                 throw e;
             }
-
         }
 
         public static void WritetoFieles()
         {
-            string outputFileName = @"D:\Documents\kb sql\112.sql";// initialize to the output file
-
-            using (var streamWriter = new StreamWriter(outputFileName))
-            {
-                var filter = Builders<BsonDocument>.Filter.Eq("id", "002");
-                var cursor = de.collection.Find(filter).ToCursor();
-                foreach (var document in cursor.ToEnumerable())
-                {
-                    using (var stringWriter = new StringWriter())
-                    using (var jsonWriter = new JsonWriter(stringWriter))
-                    {
-                        //var context = BsonSerializationContext.CreateRoot(jsonWriter);
-                        //de.collection.DocumentSerializer.Serialize(context, document);
-                        var decontext = BsonDeserializationContext.CreateRoot(re;
-                        de.collection.DocumentSerializer.Deserialize(decontext, document);
-                      var line = stringWriter.ToString();
-                        streamWriter.WriteLine(line);
-                    }
-                }
-            }
 
         }
 
         public static string GetFileFromMongo(string id)
         {
-            var filter = Builders<BsonDocument>.Filter.Eq("id", id);
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", id);
             var result = de.collection.Find(filter).ToList().ToJson();
             return result;
         }

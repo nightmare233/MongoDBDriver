@@ -10,21 +10,23 @@ using System.Collections.Generic;
 namespace  FrankTestMongoDB
 {
     
-    public class DocumentExamples
+    public class MongoDBHelp
     {
         public readonly IMongoClient client;
         public readonly IMongoCollection<BsonDocument> collection;
-        public readonly IMongoDatabase database;
-      
+        public readonly IMongoDatabase database; 
+
         /// <summary>
         /// Structor 
         /// </summary>
-        public DocumentExamples()
+        public MongoDBHelp()
         {
             var connectionString = GetConnectionString().ToString();
             client = new MongoClient(connectionString);
-            database = client.GetDatabase("test");
+            database = client.GetDatabase("test"); 
+            //先不考虑分collection保存。
             collection = database.GetCollection<BsonDocument>("inventory");
+
             //database.DropCollection("inventory");
         }
 

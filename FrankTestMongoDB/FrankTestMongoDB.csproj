@@ -42,7 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocumentExamples.cs" />
+    <Compile Include="AbstractAttachmentAccess.cs" />
+    <Compile Include="AttachmentAccess.cs" />
+    <Compile Include="AttachmentGFSAccess.cs" />
+    <Compile Include="AttachmentModel.cs" />
+    <Compile Include="MongoDBHelp.cs" />
     <Compile Include="GFSTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
