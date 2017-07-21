@@ -1,0 +1,12 @@
+F:\MongoDB Driver\src\MongoDB.Driver.Core\bin\Release\MongoDB.Driver.Core.XML
+F:\MongoDB Driver\src\MongoDB.Driver.Core\bin\Release\MongoDB.Driver.Core.dll
+F:\MongoDB Driver\src\MongoDB.Driver.Core\bin\Release\MongoDB.Driver.Core.pdb
+F:\MongoDB Driver\src\MongoDB.Driver.Core\bin\Release\MongoDB.Driver.Core.dll.CodeAnalysisLog.xml
+F:\MongoDB Driver\src\MongoDB.Driver.Core\bin\Release\MongoDB.Driver.Core.dll.lastcodeanalysissucceeded
+F:\MongoDB Driver\src\MongoDB.Driver.Core\bin\Release\MongoDB.Bson.dll
+F:\MongoDB Driver\src\MongoDB.Driver.Core\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\MongoDB Driver\src\MongoDB.Driver.Core\bin\Release\MongoDB.Bson.pdb
+F:\MongoDB Driver\src\MongoDB.Driver.Core\bin\Release\MongoDB.Bson.xml
+F:\MongoDB Driver\src\MongoDB.Driver.Core\obj\Release\MongoDB.Driver.Core.csprojResolveAssemblyReference.cache
+F:\MongoDB Driver\src\MongoDB.Driver.Core\obj\Release\MongoDB.Driver.Core.dll
+F:\MongoDB Driver\src\MongoDB.Driver.Core\obj\Release\MongoDB.Driver.Core.pdb

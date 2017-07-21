@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="js\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\src\MongoDB.Bson\MongoDB.Bson.csproj">
@@ -71,10 +72,12 @@
       <Project>{ae5166cd-76b0-4911-bd80-ced9521f37a1}</Project>
       <Name>MongoDB.Driver</Name>
     </ProjectReference>
-    <ProjectReference Include="..\tests\MongoDB.Bson.TestHelpers\MongoDB.Bson.TestHelpers.csproj">
-      <Project>{6ac4638e-ec69-46aa-b6aa-c5cf227d14ae}</Project>
-      <Name>MongoDB.Bson.TestHelpers</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\jquery-1.10.2.intellisense.js" />
+    <Content Include="js\jquery-1.10.2.js" />
+    <Content Include="js\jquery-1.10.2.min.js" />
+    <Content Include="test.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

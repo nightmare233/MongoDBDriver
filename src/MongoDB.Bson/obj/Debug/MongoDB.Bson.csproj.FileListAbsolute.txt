@@ -12,3 +12,4 @@ F:\MongoDB Driver\src\MongoDB.Bson\bin\Debug\MongoDB.Bson.dll.CodeAnalysisLog.xm
 F:\MongoDB Driver\src\MongoDB.Bson\bin\Debug\MongoDB.Bson.dll.lastcodeanalysissucceeded
 F:\MongoDB Driver\src\MongoDB.Bson\obj\Debug\MongoDB.Bson.dll
 F:\MongoDB Driver\src\MongoDB.Bson\obj\Debug\MongoDB.Bson.pdb
+F:\MongoDB Driver\src\MongoDB.Bson\obj\Debug\MongoDB.Bson.csprojResolveAssemblyReference.cache

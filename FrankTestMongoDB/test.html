@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        function sayhi()
+        {
+            alert("hi");
+        }
+        function getTest() {
+            $.ajax({
+                url: "http://localhost:59687/api/Attachment?objid=597069a23f47be040cb0843d",
+                type: "GET",
+                //data: { '': '1' },//这里键名称必须为空，多个参数请传对象，api端参数名必须为value
+                success: function (data) {
+                    alert(data);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1" onclick="getTest()">Test</button>
+</body>
+</html>

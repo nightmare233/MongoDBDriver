@@ -1,0 +1,15 @@
+F:\MongoDB Driver\src\MongoDB.Driver\bin\Release\MongoDB.Driver.XML
+F:\MongoDB Driver\src\MongoDB.Driver\bin\Release\MongoDB.Driver.dll
+F:\MongoDB Driver\src\MongoDB.Driver\bin\Release\MongoDB.Driver.pdb
+F:\MongoDB Driver\src\MongoDB.Driver\bin\Release\MongoDB.Driver.dll.CodeAnalysisLog.xml
+F:\MongoDB Driver\src\MongoDB.Driver\bin\Release\MongoDB.Driver.dll.lastcodeanalysissucceeded
+F:\MongoDB Driver\src\MongoDB.Driver\bin\Release\MongoDB.Bson.dll
+F:\MongoDB Driver\src\MongoDB.Driver\bin\Release\MongoDB.Driver.Core.dll
+F:\MongoDB Driver\src\MongoDB.Driver\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\MongoDB Driver\src\MongoDB.Driver\bin\Release\MongoDB.Bson.pdb
+F:\MongoDB Driver\src\MongoDB.Driver\bin\Release\MongoDB.Bson.xml
+F:\MongoDB Driver\src\MongoDB.Driver\bin\Release\MongoDB.Driver.Core.pdb
+F:\MongoDB Driver\src\MongoDB.Driver\bin\Release\MongoDB.Driver.Core.xml
+F:\MongoDB Driver\src\MongoDB.Driver\obj\Release\MongoDB.Driver.csprojResolveAssemblyReference.cache
+F:\MongoDB Driver\src\MongoDB.Driver\obj\Release\MongoDB.Driver.dll
+F:\MongoDB Driver\src\MongoDB.Driver\obj\Release\MongoDB.Driver.pdb
